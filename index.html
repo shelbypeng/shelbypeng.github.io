@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<div class="dynamic-content" data-zh="中文内容" data-en="English Content">中文内容</div>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <title>Zoho服务专家 - Creator与CRM解决方案提供商</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -46,6 +46,14 @@
         transition-duration: 300ms;
       }
     }
+    
+    @media (max-width: 768px) {
+      #lang-zh, #lang-en {
+        white-space: nowrap;
+        box-sizing: border-box;
+        min-width: fit-content;
+      }
+    }
   </style>
 </head>
 
@@ -56,26 +64,30 @@
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
           <a href="#" class="flex items-center">
-             <img src="/Shanghai_Creator_Small.png" alt="NA" style="height:32px">
-            <span class="text-xl font-bold text-dark">Zoho服务专家</span>
+            <i class="fa fa-cube text-primary text-3xl mr-2"></i>
+            <span class="text-xl md:text-lg font-bold text-dark" data-zh="Zoho服务专家" data-en="Zoho Service Expert"></span>
           </a>
         </div>
         
         <!-- 桌面导航 -->
         <nav class="hidden md:flex space-x-8">
-          <a href="#home" class="text-dark hover:text-primary font-medium transition-colors">首页</a>
-          <a href="#services" class="text-dark hover:text-primary font-medium transition-colors">服务</a>
-          <a href="#products" class="text-dark hover:text-primary font-medium transition-colors">产品</a>
-          <a href="#case-studies" class="text-dark hover:text-primary font-medium transition-colors">案例</a>
-          <a href="#about" class="text-dark hover:text-primary font-medium transition-colors">关于我们</a>
-          <a href="#contact" class="text-dark hover:text-primary font-medium transition-colors">联系我们</a>
+          <a href="#home" class="text-dark hover:text-primary font-medium transition-colors" data-zh="首页" data-en="Home"></a>
+          <a href="#services" class="text-dark hover:text-primary font-medium transition-colors" data-zh="服务" data-en="Services"></a>
+          <a href="#products" class="text-dark hover:text-primary font-medium transition-colors" data-zh="产品" data-en="Products"></a>
+          <a href="#case-studies" class="text-dark hover:text-primary font-medium transition-colors" data-zh="案例" data-en="Case Studies"></a>
+          <a href="#about" class="text-dark hover:text-primary font-medium transition-colors" data-zh="关于我们" data-en="About Us"></a>
+          <a href="#contact" class="text-dark hover:text-primary font-medium transition-colors" data-zh="联系我们" data-en="Contact Us"></a>
         </nav>
         
         <!-- 联系按钮 -->
         <div class="hidden md:block">
-          <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20">
-            立即咨询
-          </a>
+          <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20" data-zh="立即咨询" data-en="Consult Now"></a>
+        </div>
+        
+        <!-- 语言切换器 -->
+        <div class="flex space-x-2 ml-4">
+          <button id="lang-zh" class="px-3 py-1 rounded bg-primary text-white">中文</button>
+          <button id="lang-en" class="px-3 py-1 rounded bg-gray-200 text-gray-700">English</button>
         </div>
         
         <!-- 移动端菜单按钮 -->
@@ -90,12 +102,12 @@
     <!-- 移动端导航菜单 -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
       <div class="container mx-auto px-4 py-3 space-y-2">
-        <a href="#home" class="block py-2 text-dark hover:text-primary font-medium">首页</a>
-        <a href="#services" class="block py-2 text-dark hover:text-primary font-medium">服务</a>
-        <a href="#products" class="block py-2 text-dark hover:text-primary font-medium">产品</a>
-        <a href="#case-studies" class="block py-2 text-dark hover:text-primary font-medium">案例</a>
-        <a href="#about" class="block py-2 text-dark hover:text-primary font-medium">关于我们</a>
-        <a href="#contact" class="block py-2 text-dark hover:text-primary font-medium">联系我们</a>
+        <a href="#home" class="block py-2 text-dark hover:text-primary font-medium" data-zh="首页" data-en="Home"></a>
+    <a href="#services" class="block py-2 text-dark hover:text-primary font-medium" data-zh="服务" data-en="Services"></a>
+    <a href="#products" class="block py-2 text-dark hover:text-primary font-medium" data-zh="产品" data-en="Products"></a>
+    <a href="#case-studies" class="block py-2 text-dark hover:text-primary font-medium" data-zh="案例" data-en="Case Studies"></a>
+    <a href="#about" class="block py-2 text-dark hover:text-primary font-medium" data-zh="关于我们" data-en="About Us"></a>
+    <a href="#contact" class="block py-2 text-dark hover:text-primary font-medium" data-zh="联系我们" data-en="Contact Us"></a>
         <a href="#contact" class="block py-2 bg-primary text-white rounded-md text-center font-medium">立即咨询</a>
       </div>
     </div>
@@ -106,19 +118,11 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0">
-          <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6">
-            <span class="text-primary">Zoho Creator</span>与<span class="text-primary">CRM</span>专家服务
-          </h1>
-          <p class="text-lg md:text-xl text-dark/80 mb-8">
-            作为Zoho官方认证服务商，我们专注于为企业提供量身定制的Creator应用开发和CRM系统部署，助力企业数字化转型。
-          </p>
+          <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6" data-zh="<span class='text-primary'>Zoho Creator</span>与<span class='text-primary'>CRM</span>专家服务" data-en="<span class='text-primary'>Zoho Creator</span> and <span class='text-primary'>CRM</span> Expert Services"></h1>
+          <p class="text-lg md:text-xl text-dark/80 mb-8" data-zh="作为Zoho官方认证服务商，我们专注于为企业提供量身定制的Creator应用开发和CRM系统部署，助力企业数字化转型。" data-en="As an official Zoho certified service provider, we specialize in providing customized Creator application development and CRM system deployment for enterprises to facilitate their digital transformation."></p>
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20 text-center">
-              免费咨询方案
-            </a>
-            <a href="#services" class="bg-white hover:bg-gray-50 text-primary border border-primary px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg text-center">
-              了解我们的服务
-            </a>
+            <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20 text-center" data-zh="免费咨询方案" data-en="Free Consultation"></a>
+            <a href="#services" class="bg-white hover:bg-gray-50 text-primary border border-primary px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg text-center" data-zh="了解我们的服务" data-en="Learn About Our Services"></a>
           </div>
           <div class="mt-10 flex items-center space-x-6">
             <div class="flex -space-x-2">
@@ -144,13 +148,7 @@
         </div>
         <div class="md:w-1/2 relative">
           <div class="relative z-10 bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.02]">
-            <img src="https://picsum.photos/id/180/800/600" alt="Zoho Creator和CRM解决方案" class="w-full h-auto">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent flex items-end">
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">为企业提供数字化转型解决方案</h3>
-                <p class="text-white/90">我们的专家团队拥有丰富的Zoho产品实施经验</p>
-              </div>
-            </div>
+            <img src="/CustomerLogo/zoholics_page-0001.jpg" alt="Zoho Creator和CRM解决方案" class="w-full h-auto" onclick="window.open(this.src, '_blank')">
           </div>
           <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary/20 rounded-full blur-2xl -z-10"></div>
           <div class="absolute -top-6 -left-6 w-40 h-40 bg-primary/20 rounded-full blur-2xl -z-10"></div>
@@ -162,25 +160,25 @@
   <!-- 客户Logo -->
   <section class="py-12 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-dark/60 mb-8">值得信赖的合作伙伴</p>
+      <p class="text-center text-dark/60 mb-8" data-zh="值得信赖的合作伙伴" data-en="Trusted Partners"></p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/119/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/ERP分销与生产.png" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/129/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/Samaritan公益.png" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/139/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/国际贸易供应链.jpg" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/149/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/国际电商.jpg" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/159/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/零售服务.jpg" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
-        <div class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-          <img src="https://picsum.photos/id/169/200/80" alt="合作伙伴Logo" class="h-full w-auto">
+        <div class="h-12">
+          <img src="/CustomerLogo/零售连锁和培训.jpg" alt="合作伙伴Logo" class="h-full w-auto">
         </div>
       </div>
     </div>
@@ -190,8 +188,8 @@
   <section id="services" class="py-20 bg-light">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">我们的专业服务</h2>
-        <p class="text-lg text-dark/70 max-w-3xl mx-auto">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4" data-zh="我们的专业服务" data-en="Our Professional Services"></h2>
+        <p class="text-lg text-dark/70 max-auto mx-auto" data-zh="我们提供全方位的Zoho Creator和CRM服务，从咨询、定制开发到系统集成和培训，满足企业多样化需求" data-en="We provide comprehensive Zoho Creator and CRM services, from consultation, custom development to system integration and training, to meet the diverse needs of enterprises.">
           我们提供全方位的Zoho Creator和CRM服务，从咨询、定制开发到系统集成和培训，满足企业多样化需求
         </p>
       </div>
@@ -202,25 +200,23 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-wrench text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">Zoho Creator定制开发</h3>
-          <p class="text-dark/70 mb-6">
-            根据企业需求，定制开发功能强大的Zoho Creator应用，优化业务流程，提高工作效率。
-          </p>
+          <h3 class="text-xl font-bold mb-4" data-zh="Zoho Creator定制开发" data-en="Zoho Creator Custom Development"></h3>
+          <p class="text-dark/70 mb-6" data-zh="根据企业需求定制开发Zoho Creator应用，实现业务流程自动化和数据管理数字化。" data-en="Custom development of Zoho Creator applications to automate business processes and digitize data management."></p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>业务流程自动化</span>
+              <span data-zh="业务流程自动化" data-en="Business process automation"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>数据管理与分析</span>
+              <span data-zh="数据管理与分析" data-en="Data management and analysis"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>自定义表单与报表</span>
+              <span data-zh="自定义表单与报表" data-en="Custom forms and reports"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -230,25 +226,23 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-users text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">Zoho CRM实施与优化</h3>
-          <p class="text-dark/70 mb-6">
-            专业的Zoho CRM系统部署、配置和优化服务，帮助企业更好地管理客户关系，提升销售业绩。
-          </p>
+          <h3 class="text-xl font-bold mb-4" data-zh="Zoho CRM实施与优化" data-en="Zoho CRM Implementation & Optimization">Zoho CRM实施与优化</h3>
+          <p class="text-dark/70 mb-6" data-zh="专业的Zoho CRM系统部署、配置和优化服务，帮助企业更好地管理客户关系，提升销售业绩。" data-en="Professional Zoho CRM system deployment, configuration, and optimization services to help enterprises better manage customer relationships and improve sales performance.">专业的Zoho CRM系统部署、配置和优化服务，帮助企业更好地管理客户关系，提升销售业绩。</p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>CRM系统规划与部署</span>
+              <span data-zh="CRM系统规划与部署" data-en="CRM system planning and deployment"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>销售流程自动化</span>
+              <span data-zh="销售流程自动化" data-en="Sales process automation"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>数据分析与洞察</span>
+              <span data-zh="数据分析与洞察" data-en="Data analysis and insights"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -258,25 +252,25 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-cogs text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">系统集成与API开发</h3>
-          <p class="text-dark/70 mb-6">
+          <h3 class="text-xl font-bold mb-4" data-zh="系统集成与API开发" data-en="System Integration & API Development"></h3>
+          <p class="text-dark/70 mb-6" data-zh="将Zoho产品与其他业务系统无缝集成，实现数据互通，消除信息孤岛，提升企业整体运营效率。" data-en="Seamlessly integrate Zoho products with other business systems to achieve data interoperability, eliminate information silos, and improve the overall operational efficiency of the enterprise.">
             将Zoho产品与其他业务系统无缝集成，实现数据互通，消除信息孤岛，提升企业整体运营效率。
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>Zoho与第三方系统集成</span>
+              <span data-zh="Zoho与第三方系统集成" data-en="Zoho and third-party system integration"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>定制API开发与集成</span>
+              <span data-zh="定制API开发与集成" data-en="Custom API development and integration"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>数据迁移与同步</span>
+              <span data-zh="数据迁移与同步" data-en="Data migration and synchronization"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -286,25 +280,25 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-graduation-cap text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">培训与支持服务</h3>
-          <p class="text-dark/70 mb-6">
+          <h3 class="text-xl font-bold mb-4" data-zh="培训与支持服务" data-en="Training and Support Services"></h3>
+          <p class="text-dark/70 mb-6" data-zh="提供全面的Zoho产品培训和持续技术支持，确保企业用户能够充分利用系统功能。" data-en="Provide comprehensive Zoho product training and continuous technical support to ensure that enterprise users can fully utilize the system functions.">
             提供全面的Zoho产品培训和持续技术支持，确保企业用户能够充分利用系统功能。
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>系统使用培训</span>
+              <span data-zh="系统使用培训" data-en="System usage training"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>技术支持与维护</span>
+              <span data-zh="技术支持与维护" data-en="Technical support and maintenance"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>系统升级与优化</span>
+              <span data-zh="系统升级与优化" data-en="System upgrade and optimization"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -314,25 +308,25 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-line-chart text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">数据分析与BI</h3>
-          <p class="text-dark/70 mb-6">
+          <h3 class="text-xl font-bold mb-4" data-zh="数据分析与BI" data-en="Data Analysis & BI"></h3>
+          <p class="text-dark/70 mb-6" data-zh="利用Zoho Analytics等工具，帮助企业深入分析业务数据，提供数据驱动的决策支持。" data-en="Use tools like Zoho Analytics to help enterprises deeply analyze business data and provide data-driven decision support.">
             利用Zoho Analytics等工具，帮助企业深入分析业务数据，提供数据驱动的决策支持。
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>数据可视化</span>
+              <span data-zh="数据可视化" data-en="Data visualization"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>业务智能报表</span>
+              <span data-zh="业务智能报表" data-en="Business intelligence reports"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>预测分析</span>
+              <span data-zh="预测分析" data-en="Predictive analysis"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -342,25 +336,25 @@
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
             <i class="fa fa-lightbulb-o text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">数字化转型咨询</h3>
-          <p class="text-dark/70 mb-6">
+          <h3 class="text-xl font-bold mb-4" data-zh="数字化转型咨询" data-en="Digital Transformation Consulting"></h3>
+          <p class="text-dark/70 mb-6" data-zh="基于Zoho产品生态，为企业提供全面的数字化转型咨询服务，制定适合企业的数字化战略。" data-en="Based on the Zoho product ecosystem, provide comprehensive digital transformation consulting services for enterprises and develop digital strategies suitable for enterprises.">
             基于Zoho产品生态，为企业提供全面的数字化转型咨询服务，制定适合企业的数字化战略。
           </p>
           <ul class="space-y-2 mb-6">
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>业务流程评估与优化</span>
+              <span data-zh="业务流程评估与优化" data-en="Business process assessment and optimization"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>数字化战略规划</span>
+              <span data-zh="数字化战略规划" data-en="Digital strategy planning"></span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-check text-secondary mt-1 mr-2"></i>
-              <span>Zoho产品选型指导</span>
+              <span data-zh="Zoho产品选型指导" data-en="Zoho product selection guidance"></span>
             </li>
           </ul>
-          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+          <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
             了解更多 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -372,8 +366,8 @@
   <section id="products" class="py-20 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">Zoho产品解决方案</h2>
-        <p class="text-lg text-dark/70 max-w-3xl mx-auto">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4" data-zh="Zoho产品解决方案" data-en="Zoho Product Solutions"></h2>
+        <p class="text-lg text-dark/70 max-w-3xl mx-auto" data-zh="我们专注于提供以下Zoho核心产品的定制化解决方案，满足企业不同场景的需求" data-en="We specialize in providing customized solutions for the following core Zoho products to meet the needs of enterprises in different scenarios.">
           我们专注于提供以下Zoho核心产品的定制化解决方案，满足企业不同场景的需求
         </p>
       </div>
@@ -382,25 +376,25 @@
         <!-- 产品卡片1 -->
         <div class="group bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
           <div class="relative h-48 overflow-hidden">
-            <img src="https://picsum.photos/id/1/600/400" alt="Zoho Creator" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+            <img src="/CustomerLogo/zoho-creator-social-preview.png" alt="Zoho Creator" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 flex items-end">
               <div class="p-6">
-                <h3 class="text-xl font-bold text-white">Zoho Creator</h3>
-                <p class="text-white/80 text-sm">无代码应用开发平台</p>
+                <h3 class="text-xl font-bold text-black" data-zh="Zoho Creator" data-en="Zoho Creator"></h3>
+                <p class="text-black/80 text-sm" data-zh="低代码应用开发平台" data-en="Low-code application development platform"></p>
               </div>
             </div>
           </div>
           <div class="p-6">
-            <p class="text-dark/70 mb-4">
-              Zoho Creator是一款强大的无代码应用开发平台，让企业能够快速创建自定义业务应用，无需编写复杂代码。
-            </p>
+            <p class="text-dark/70 mb-4" data-zh="Zoho Creator是一款强大的无代码应用开发平台，让企业能够快速创建自定义业务应用，无需编写复杂代码。" data-en="Zoho Creator is a powerful no-code application development platform that enables enterprises to quickly create custom business applications without writing complex code.">
+                Zoho Creator是一款强大的无代码应用开发平台，让企业能够快速创建自定义业务应用，无需编写复杂代码。
+              </p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">工作流自动化</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">表单设计</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">数据管理</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">移动应用</span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="工作流自动化" data-en="Workflow Automation"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="表单设计" data-en="Form Design"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="数据管理" data-en="Data Management"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="移动应用" data-en="Mobile Apps"></span>
             </div>
-            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
               了解更多 <i class="fa fa-arrow-right ml-2"></i>
             </a>
           </div>
@@ -409,55 +403,49 @@
         <!-- 产品卡片2 -->
         <div class="group bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
           <div class="relative h-48 overflow-hidden">
-            <img src="https://picsum.photos/id/20/600/400" alt="Zoho CRM" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+            <img src="/CustomerLogo/CRM_0000280a-473b-4d01-986e-7a5bb5f3e273.png" alt="Zoho CRM" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 bg-white" style="background-color: white;">
+            <div class="absolute inset-0 flex items-end">
               <div class="p-6">
-                <h3 class="text-xl font-bold text-white">Zoho CRM</h3>
-                <p class="text-white/80 text-sm">客户关系管理系统</p>
+                <h3 class="text-xl font-bold text-black" data-zh="Zoho CRM" data-en="Zoho CRM"></h3>
+                <p class="text-black/80 text-sm" data-zh="客户关系管理系统" data-en="Customer Relationship Management"></p>
               </div>
             </div>
           </div>
           <div class="p-6">
-            <p class="text-dark/70 mb-4">
-              全方位的CRM解决方案，帮助企业管理销售、营销和客户服务流程，提升客户满意度和销售业绩。
-            </p>
+            <p class="text-dark/70 mb-4" data-zh="全方位的CRM解决方案，帮助企业管理销售、营销和客户服务流程，提升客户满意度和销售业绩。" data-en="Comprehensive CRM solution to help businesses manage sales, marketing, and customer service processes, improving customer satisfaction and sales performance."></p>
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">销售自动化</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">营销自动化</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">客户服务</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">数据分析</span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="销售自动化" data-en="Sales Automation"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="营销自动化" data-en="Marketing Automation"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="客户服务" data-en="Customer Service"></span>
+              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="数据分析" data-en="Data Analysis"></span>
             </div>
-            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
-              了解更多 <i class="fa fa-arrow-right ml-2"></i>
-            </a>
+            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More"><i class="fa fa-arrow-right ml-2"></i></a>
           </div>
         </div>
 
         <!-- 产品卡片3 -->
         <div class="group bg-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
           <div class="relative h-48 overflow-hidden">
-            <img src="https://picsum.photos/id/26/600/400" alt="Zoho Analytics" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white">Zoho Analytics</h3>
-                <p class="text-white/80 text-sm">业务智能与数据分析</p>
-              </div>
-            </div>
-          </div>
-          <div class="p-6">
-            <p class="text-dark/70 mb-4">
-              强大的数据分析和商业智能工具，帮助企业从海量数据中获取有价值的洞察，支持数据驱动决策。
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">数据可视化</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">报表生成</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">预测分析</span>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">数据整合</span>
-            </div>
-            <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
-              了解更多 <i class="fa fa-arrow-right ml-2"></i>
-            </a>
-          </div>
+  <img src="/CustomerLogo/unnamed.png" alt="Zoho Analytics" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 bg-white" style="background-color: white;">
+  <div class="absolute inset-0 flex items-end">
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-black" data-zh="Zoho Analytics" data-en="Zoho Analytics"></h3>
+      <p class="text-black/80 text-sm" data-zh="业务智能与数据分析" data-en="Business Intelligence & Analytics"></p>
+    </div>
+  </div>
+</div>
+<div class="p-6">
+  <p class="text-dark/70 mb-4" data-zh="强大的数据分析和商业智能工具，帮助企业从海量数据中获取有价值的洞察，支持数据驱动决策。" data-en="Powerful data analysis and business intelligence tool that helps businesses gain valuable insights from massive data and support data-driven decisions."></p>
+  <div class="flex flex-wrap gap-2 mb-6">
+    <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="数据可视化" data-en="Data Visualization"></span>
+    <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="报表生成" data-en="Report Generation"></span>
+    <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="预测分析" data-en="Predictive Analysis"></span>
+    <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full" data-zh="数据整合" data-en="Data Integration"></span>
+  </div>
+  <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="了解更多" data-en="Learn More">
+    <i class="fa fa-arrow-right ml-2"></i>
+  </a>
+</div>
         </div>
       </div>
     </div>
@@ -467,8 +455,8 @@
   <section id="case-studies" class="py-20 bg-light">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">成功案例</h2>
-        <p class="text-lg text-dark/70 max-w-3xl mx-auto">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4" data-zh="成功案例" data-en="Success Stories">成功案例</h2>
+        <p class="text-lg text-dark/70 max-w-3xl mx-auto" data-zh="我们已帮助众多企业实现了业务流程数字化转型，看看他们如何通过Zoho解决方案提升效率" data-en="We've helped numerous enterprises achieve digital transformation of their business processes. See how they improved efficiency with Zoho solutions.">
           我们已帮助众多企业实现了业务流程数字化转型，看看他们如何通过Zoho解决方案提升效率
         </p>
       </div>
@@ -477,22 +465,20 @@
         <!-- 案例1 -->
         <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
           <div class="relative h-56 overflow-hidden">
-            <img src="https://picsum.photos/id/28/600/400" alt="制造业CRM系统案例" class="w-full h-full object-cover">
+            <img src="/CustomerLogo/7-22110F92PB16.png" alt="制造业CRM系统案例" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3">制造业</span>
-              <h3 class="text-xl font-bold text-white">制造业企业CRM系统实施</h3>
+              <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3" data-zh="制造业" data-en="Manufacturing"></span>
+              <h3 class="text-xl font-bold text-white" data-zh="制造业企业CRM系统实施" data-en="Manufacturing Enterprise CRM Implementation"></h3>
             </div>
           </div>
           <div class="p-6">
-            <p class="text-dark/70 mb-4">
-              为某中型制造企业实施Zoho CRM系统，整合销售、采购和客户服务流程，提升销售效率35%。
-            </p>
+              <p class="text-dark/70 mb-4" data-zh="欧派集团借助Zoho CRM积极布局一体化、差异化的智能产业全链条体系的同时，打造以“客户为中心”的业务发展战略。Zoho CRM为欧派的经营战略决策提供富有价值的分析结果与辅助支持，有效解决了企业营销、销售、服务各环节脱节、“野蛮生长”的问题。" data-en="While actively deploying an integrated and differentiated intelligent industrial chain system with Zoho CRM, Oppein Group has created a 'customer-centric' business development strategy. Zoho CRM provides valuable analysis results and auxiliary support for Oppein's business strategic decisions, effectively solving the problems of disconnection and 'uncontrolled growth' in enterprise marketing, sales, and service links."></p>
             <div class="flex items-center mb-6">
               <img src="https://picsum.photos/id/1005/100/100" alt="客户代表头像" class="w-10 h-10 rounded-full mr-3">
               <div>
-                <h4 class="font-medium">张明</h4>
-                <p class="text-sm text-dark/60">采购部经理</p>
+                <h4 class="font-medium" data-zh="张明" data-en="Zhang Ming">张明</h4>
+                <p class="text-sm text-dark/60" data-zh="采购部经理" data-en="Purchasing Manager">采购部经理</p>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -503,7 +489,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+              <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="查看详情" data-en="View Details">
                 查看详情 <i class="fa fa-arrow-right ml-2"></i>
               </a>
             </div>
@@ -513,58 +499,56 @@
         <!-- 案例2 -->
         <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
           <div class="relative h-56 overflow-hidden">
-            <img src="https://picsum.photos/id/42/600/400" alt="服务业流程自动化案例" class="w-full h-full object-cover">
+            <img src="/CustomerLogo/CRM.jpeg" alt="制造业流程自动化案例" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3">服务业</span>
-              <h3 class="text-xl font-bold text-white">服务企业流程自动化平台</h3>
-            </div>
+  <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3" data-zh="制造业" data-en="Service Industry"></span>
+  <h3 class="text-xl font-bold text-white" data-zh="制造业流程自动化案例" data-en="Manufacturing Process Automation Case"></h3>
+</div>
           </div>
           <div class="p-6">
-            <p class="text-dark/70 mb-4">
-              为服务行业客户开发定制化的Zoho Creator应用，实现服务请求管理、分配和跟踪全流程自动化。
-            </p>
-            <div class="flex items-center mb-6">
-              <img src="https://picsum.photos/id/1006/100/100" alt="客户代表头像" class="w-10 h-10 rounded-full mr-3">
-              <div>
-                <h4 class="font-medium">李婷</h4>
-                <p class="text-sm text-dark/60">运营总监</p>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <div class="flex text-accent">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-              </div>
-              <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
-                查看详情 <i class="fa fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
+   <p class="text-dark/70 mb-4" data-zh="Zoho Creator广泛运用于公司的业务层面，比如机动车零组件供应链平台的成功转型，从业务出货通知到代工厂，再到仓库收货、品管和出货，将代工厂进行串连，并且利用QR-Code和手机App简化作业流程，大幅提升效能降低人力负担。" data-en="Zoho Creator is widely used in the company's business operations. For example, it successfully transformed the motor vehicle parts supply chain platform. It connects contract manufacturers from business shipment notifications to contract manufacturers, and then to warehouse receiving, quality control, and shipping. It also simplifies the operation process using QR codes and mobile apps, significantly improving efficiency and reducing labor burden."></p>
+  <div class="flex items-center mb-6">
+    <img src="https://picsum.photos/id/1006/100/100" alt="客户代表头像" class="w-10 h-10 rounded-full mr-3">
+    <div>
+      <h4 class="font-medium" data-zh="李婷" data-en="Li Ting"></h4>
+      <p class="text-sm text-dark/60" data-zh="运营总监" data-en="Operations Director"></p>
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    <div class="flex text-accent">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star-half-o"></i>
+    </div>
+    <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="查看详情" data-en="View Details">
+      <i class="fa fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</div>
         </div>
 
         <!-- 案例3 -->
         <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
           <div class="relative h-56 overflow-hidden">
-            <img src="https://picsum.photos/id/48/600/400" alt="零售业数据分析案例" class="w-full h-full object-cover">
+            <img src="/CustomerLogo/logo_new-20231124.png" alt="零售业数据分析案例" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3">零售业</span>
-              <h3 class="text-xl font-bold text-white">零售连锁数据分析平台</h3>
+              <span class="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full mb-3" data-zh="零售业" data-en="Retail Industry"></span>
+              <h3 class="text-xl font-bold text-white" data-zh="零售连锁数据分析平台" data-en="Retail Chain Data Analysis Platform"></h3>
             </div>
           </div>
           <div class="p-6">
-            <p class="text-dark/70 mb-4">
+            <p class="text-dark/70 mb-4" data-zh="基于Zoho Analytics构建的零售数据分析平台，能整合门店销售、库存及顾客数据。多维度分析销售情况，生成直观图表,联动库存管理，自动预警并建议补货。移动应用让员工随时查数据，减少 80% 人工处理量，提升库存周转率 35%、顾客复购率 20%，高效省力。" data-en="The retail data analysis platform built on Zoho Analytics helps chain enterprises monitor sales data in real-time and optimize inventory management.">
               基于Zoho Analytics构建的零售数据分析平台，帮助连锁企业实时监控销售数据，优化库存管理。
             </p>
             <div class="flex items-center mb-6">
               <img src="https://picsum.photos/id/1012/100/100" alt="客户代表头像" class="w-10 h-10 rounded-full mr-3">
               <div>
-                <h4 class="font-medium">王强</h4>
-                <p class="text-sm text-dark/60">数据总监</p>
+                <h4 class="font-medium" data-zh="王强" data-en="Wang Qiang"></h4>
+                <p class="text-sm text-dark/60" data-zh="数据总监" data-en="Data Director"></p>
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -575,7 +559,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center">
+              <a href="#contact" class="text-primary font-medium hover:text-primary/80 inline-flex items-center" data-zh="查看详情" data-en="View Details">
                 查看详情 <i class="fa fa-arrow-right ml-2"></i>
               </a>
             </div>
@@ -584,7 +568,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20">
+        <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20" data-zh="查看更多案例" data-en="View More Cases">
           查看更多案例
         </a>
       </div>
@@ -597,40 +581,74 @@
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2 relative">
           <div class="relative z-10 rounded-2xl overflow-hidden shadow-xl">
-            <img src="https://picsum.photos/id/36/800/600" alt="我们的团队" class="w-full h-auto">
+            <div class="relative overflow-hidden image-carousel" style="height: 300px;">
+              <img src="/CustomerLogo/banner.png" alt="我们的团队" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+              <img src="/CustomerLogo/创建者logo.jpg" alt="团队展示" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-0">
+              <img src="/CustomerLogo/partners.svg" alt="活动展示" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-0">
+            </div>
+            <script>
+              // 修复图片轮播逻辑
+              document.addEventListener('DOMContentLoaded', function() {
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('.image-carousel img');
+                const slideCount = slides.length;
+                
+                if (slideCount === 0) {
+                  console.error('未找到轮播图片元素');
+                  return;
+                }
+                
+                function showSlide(index) {
+                  slides.forEach((slide, i) => {
+                    if (i === index) {
+                      slide.classList.remove('opacity-0');
+                      slide.classList.add('opacity-100');
+                    } else {
+                      slide.classList.remove('opacity-100');
+                      slide.classList.add('opacity-0');
+                    }
+                  });
+                }
+                
+                // 初始显示第一张图片
+                showSlide(currentSlide);
+                
+                // 设置轮播定时器
+                setInterval(() => {
+                  currentSlide = (currentSlide + 1) % slideCount;
+                  showSlide(currentSlide);
+                }, 3000);
+              });
+            </script>
           </div>
           <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary/20 rounded-full blur-2xl -z-10"></div>
           <div class="absolute -top-6 -left-6 w-40 h-40 bg-primary/20 rounded-full blur-2xl -z-10"></div>
         </div>
         <div class="md:w-1/2">
-          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-6">关于我们</h2>
-          <p class="text-dark/70 mb-6">
-            我们是专业的Zoho服务提供商，团队成员拥有丰富的企业数字化转型经验和Zoho产品实施经验。自成立以来，我们已为超过100家企业提供了高质量的Zoho解决方案，帮助客户提升运营效率，降低成本，加速业务增长。
-          </p>
-          <p class="text-dark/70 mb-8">
-            作为Zoho官方认证服务商，我们不仅掌握Zoho全系列产品的专业知识，还深入了解各行业的业务特点，能够为客户提供量身定制的解决方案。
-          </p>
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-6" data-zh="关于我们" data-en="About Us"></h2>
+          <p class="text-dark/70 mb-6" data-zh="我们是上海创建者信息技术有限公司，专业的Zoho官方认证服务商，团队成员拥有10年以上企业数字化转型经验和Zoho产品实施经验。自成立以来，我们已为超过200家企业提供了高质量的Zoho解决方案，帮助客户提升运营效率，降低开发成本，加速业务增长。" data-en="We are Shanghai Creator Information Technology Co., Ltd., an official Zoho certified service provider with team members having over 10 years of experience in enterprise digital transformation and Zoho product implementation. Since our establishment, we have provided high-quality Zoho solutions to over 200 enterprises, helping clients improve operational efficiency, reduce development costs, and accelerate business growth."></p>
+          <p class="text-dark/70 mb-8" data-zh="作为Zoho官方认证服务商，我们不仅掌握Zoho全系列产品的专业知识，还深入了解各行业的业务特点，能够为客户提供量身定制的解决方案。" data-en="As an officially certified Zoho service provider, we not only master professional knowledge of the entire Zoho product line but also deeply understand the business characteristics of various industries, enabling us to provide customized solutions for clients."></p>
 
           <div class="grid grid-cols-2 gap-6 mb-8">
             <div class="bg-light p-6 rounded-xl">
-              <div class="text-4xl font-bold text-primary mb-2">100+</div>
-              <p class="text-dark/70">企业客户</p>
+              <div class="text-4xl font-bold text-primary mb-2">200+</div>
+              <p class="text-dark/70" data-zh="企业客户" data-en="Enterprise Customers"></p>
             </div>
             <div class="bg-light p-6 rounded-xl">
-              <div class="text-4xl font-bold text-primary mb-2">5年+</div>
-              <p class="text-dark/70">Zoho服务经验</p>
+              <div class="text-4xl font-bold text-primary mb-2">8+</div>
+              <p class="text-dark/70" data-zh="Zoho服务经验" data-en="Zoho Service Experience"></p>
             </div>
             <div class="bg-light p-6 rounded-xl">
               <div class="text-4xl font-bold text-primary mb-2">20+</div>
-              <p class="text-dark/70">专业顾问</p>
+              <p class="text-dark/70" data-zh="专业顾问" data-en="Professional Consultants"></p>
             </div>
             <div class="bg-light p-6 rounded-xl">
               <div class="text-4xl font-bold text-primary mb-2">98%</div>
-              <p class="text-dark/70">客户满意度</p>
+              <p class="text-dark/70" data-zh="客户满意度" data-en="Customer Satisfaction"></p>
             </div>
           </div>
 
-          <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20 inline-flex items-center">
+          <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-primary/20 inline-flex items-center" data-zh="了解更多关于我们" data-en="Learn More About Us">
             了解更多关于我们 <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -644,19 +662,19 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div class="p-6">
           <div class="text-4xl font-bold mb-2">98%</div>
-          <p class="text-white/80">客户满意度</p>
+          <p class="text-white/80" data-zh="客户满意度" data-en="Customer Satisfaction"></p>
         </div>
         <div class="p-6">
           <div class="text-4xl font-bold mb-2">45%</div>
-          <p class="text-white/80">平均效率提升</p>
+          <p class="text-white/80" data-zh="平均效率提升" data-en="Average Efficiency Improvement"></p>
         </div>
         <div class="p-6">
-          <div class="text-4xl font-bold mb-2">100+</div>
-          <p class="text-white/80">成功项目</p>
+          <div class="text-4xl font-bold mb-2">200+</div>
+          <p class="text-white/80" data-zh="成功项目" data-en="Successful Projects"></p>
         </div>
         <div class="p-6">
           <div class="text-4xl font-bold mb-2">24/7</div>
-          <p class="text-white/80">技术支持</p>
+          <p class="text-white/80" data-zh="技术支持" data-en="Technical Support"></p>
         </div>
       </div>
     </div>
@@ -666,8 +684,8 @@
   <section id="contact" class="py-20 bg-light">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">联系我们</h2>
-        <p class="text-lg text-dark/70 max-w-3xl mx-auto">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4" data-zh="联系我们" data-en="Contact Us">联系我们</h2>
+        <p class="text-lg text-dark/70 max-w-3xl mx-auto" data-zh="无论您是想了解更多关于Zoho产品的信息，还是需要定制化解决方案，我们的专家团队都将为您提供专业的咨询服务" data-en="Whether you want to learn more about Zoho products or need a customized solution, our expert team will provide you with professional consulting services.">
           无论您是想了解更多关于Zoho产品的信息，还是需要定制化解决方案，我们的专家团队都将为您提供专业的咨询服务
         </p>
       </div>
@@ -675,7 +693,7 @@
       <div class="flex flex-col lg:flex-row gap-12">
         <div class="lg:w-1/3">
           <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-            <h3 class="text-xl font-bold mb-6">联系方式</h3>
+            <h3 class="text-xl font-bold mb-6" data-zh="联系方式" data-en="Contact Information">联系方式</h3>
             
             <div class="space-y-6">
               <div class="flex items-start">
@@ -683,8 +701,8 @@
                   <i class="fa fa-map-marker text-primary text-xl"></i>
                 </div>
                 <div>
-                  <h4 class="font-medium mb-1">地址</h4>
-                  <p class="text-dark/70">北京市朝阳区建国路88号现代城SOHO B座1508室</p>
+                  <h4 class="font-medium mb-1" data-zh="地址" data-en="Address"></h4>
+                <p class="text-dark/70" data-zh="上海市黄浦区北京东路668号科技京城西楼24B1" data-en="24B1, West Tower, Keji Jingcheng, No. 668 Beijing East Road, Huangpu District, Shanghai"></p>
                 </div>
               </div>
               
@@ -693,8 +711,9 @@
                   <i class="fa fa-phone text-primary text-xl"></i>
                 </div>
                 <div>
-                  <h4 class="font-medium mb-1">电话</h4>
-                  <p class="text-dark/70">400-123-4567</p>
+                  <h4 class="font-medium mb-1" data-zh="电话" data-en="Phone"></h4>
+                  <p class="text-dark/70" data-zh="18602196168" data-en="18602196168"></p>
+                   <p class="text-dark/70" data-zh="15618436168" data-en="15618436168"></p>
                 </div>
               </div>
               
@@ -703,8 +722,9 @@
                   <i class="fa fa-envelope text-primary text-xl"></i>
                 </div>
                 <div>
-                  <h4 class="font-medium mb-1">邮箱</h4>
-                  <p class="text-dark/70">contact@zohoservice.com</p>
+                  <h4 class="font-medium mb-1" data-zh="邮箱" data-en="Email"></h4>
+                  <p class="text-dark/70" data-zh="shelby.peng@zohomail.cn" data-en="shelby.peng@zohomail.cn"></p>
+                   <p class="text-dark/70" data-zh="jing.liu_wh@zohomail.cn" data-en="jing.liu_wh@zohomail.cn"></p>
                 </div>
               </div>
               
@@ -713,14 +733,14 @@
                   <i class="fa fa-clock-o text-primary text-xl"></i>
                 </div>
                 <div>
-                  <h4 class="font-medium mb-1">工作时间</h4>
-                  <p class="text-dark/70">周一至周五: 9:00 - 18:00</p>
+                  <h4 class="font-medium mb-1" data-zh="工作时间" data-en="Working Hours"></h4>
+                  <p class="text-dark/70" data-zh="周一至周五: 9:00 - 18:00" data-en="Monday to Friday: 9:00 - 18:00"></p>
                 </div>
               </div>
             </div>
             
             <div class="mt-10">
-              <h4 class="font-medium mb-4">关注我们</h4>
+              <h4 class="font-medium mb-4" data-zh="关注我们" data-en="Follow Us">关注我们</h4>
               <div class="flex space-x-4">
                 <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary/20 text-primary rounded-full flex items-center justify-center transition-colors">
                   <i class="fa fa-weixin"></i>
@@ -739,18 +759,11 @@
           </div>
         </div>
         
-        <div class="lg:w-2/3">
+        <div class="lg:w-2/3 h-auto">
           <div class="bg-white p-8 rounded-xl shadow-lg">
-            <h3 class="text-xl font-bold mb-6">发送消息</h3>
-            <iframe 
-  src="https://creatorapp.zohopublic.com/shelbypeng1/timesheet/form-embed/Consult_Request/tHVjpfUh9HmRn8Ms8z2EsfOmQZNT8a6UH4M2tWeBY8Kr9Z7Fy5O53Hk1gbnJCJPYruZ71uXK4JAh6N2e8WBXUR4dT7fYtnsf5sxA" 
-  width="100%" 
-  height="600px" 
-  frameborder="0"
-  style="border: 1px solid #ddd;"
->
-  您的浏览器不支持 iframe，请点击 <a href="https://creatorapp.zohopublic.com/shelbypeng1/timesheet/form-embed/Consult_Request/tHVjpfUh9HmRn8Ms8z2EsfOmQZNT8a6UH4M2tWeBY8Kr9Z7Fy5O53Hk1gbnJCJPYruZ71uXK4JAh6N2e8WBXUR4dT7fYtnsf5sxA">这里</a> 填写表单。
-</iframe>
+            
+            <iframe height='500px' width='100%' frameborder='0' allowTransparency='true' scrolling='auto' src='https://creatorapp.zohopublic.com/shelbypeng1/timesheet/form-embed/Consult_Request/tHVjpfUh9HmRn8Ms8z2EsfOmQZNT8a6UH4M2tWeBY8Kr9Z7Fy5O53Hk1gbnJCJPYruZ71uXK4JAh6N2e8WBXUR4dT7fYtnsf5sxA'style='width: 100%; height: 61vh;'></iframe>
+                
           </div>
         </div>
       </div>
@@ -763,10 +776,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         <div>
           <div class="flex items-center mb-6">
-            <i class="fa fa-cube text-primary text-3xl mr-2"></i>
-            <span class="text-xl font-bold">Zoho服务专家</span>
+            <a href="#" class="flex items-center">
+              <span class="text-2xl font-bold text-white" data-zh="上海创建者信息技术有限公司" data-en="Shanghai Creator Information Technology Co., Ltd.">上海创建者信息技术有限公司</span>
+            </a>
           </div>
-          <p class="text-white/70 mb-6">
+          <p class="text-white/70 mb-6" data-zh="专业的Zoho Creator与CRM解决方案提供商，助力企业数字化转型，提升运营效率。" data-en="Professional Zoho Creator and CRM solution provider, helping enterprises with digital transformation and improving operational efficiency.">
             专业的Zoho Creator与CRM解决方案提供商，助力企业数字化转型，提升运营效率。
           </p>
           <div class="flex space-x-4">
@@ -786,47 +800,47 @@
         </div>
         
         <div>
-          <h4 class="text-lg font-bold mb-6">服务</h4>
+          <h4 class="text-lg font-bold mb-6" data-zh="服务" data-en="Services"></h4>
           <ul class="space-y-3">
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">Zoho Creator定制开发</a></li>
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">Zoho CRM实施与优化</a></li>
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">系统集成与API开发</a></li>
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">培训与支持服务</a></li>
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">数据分析与BI</a></li>
-            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors">数字化转型咨询</a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Creator定制开发" data-en="Zoho Creator Custom Development"></a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho CRM实施与优化" data-en="Zoho CRM Implementation & Optimization"></a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="系统集成与API开发" data-en="System Integration & API Development"></a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="培训与支持服务" data-en="Training & Support Services"></a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="数据分析与BI" data-en="Data Analysis & BI"></a></li>
+            <li><a href="#services" class="text-white/70 hover:text-primary transition-colors" data-zh="数字化转型咨询" data-en="Digital Transformation Consulting"></a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="text-lg font-bold mb-6">产品</h4>
+          <h4 class="text-lg font-bold mb-6" data-zh="产品" data-en="Products"></h4>
           <ul class="space-y-3">
-            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors">Zoho Creator</a></li>
-            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors">Zoho CRM</a></li>
-            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors">Zoho Analytics</a></li>
-            <li><a href="#" class="text-white/70 hover:text-primary transition-colors">Zoho Books</a></li>
-            <li><a href="#" class="text-white/70 hover:text-primary transition-colors">Zoho Projects</a></li>
-            <li><a href="#" class="text-white/70 hover:text-primary transition-colors">Zoho Desk</a></li>
+            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Creator" data-en="Zoho Creator"></a></li>
+            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho CRM" data-en="Zoho CRM"></a></li>
+            <li><a href="#products" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Analytics" data-en="Zoho Analytics"></a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Books" data-en="Zoho Books"></a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Projects" data-en="Zoho Projects"></a></li>
+            <li><a href="#" class="text-white/70 hover:text-primary transition-colors" data-zh="Zoho Desk" data-en="Zoho Desk"></a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="text-lg font-bold mb-6">联系我们</h4>
+          <h4 class="text-lg font-bold mb-6" data-zh="联系我们" data-en="Contact Us">联系我们</h4>
           <ul class="space-y-3">
             <li class="flex items-start">
               <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
-              <span class="text-white/70">北京市朝阳区建国路88号现代城SOHO B座1508室</span>
+              <span class="text-white/70" data-zh="上海市黄浦区北京东路668号科技京城西楼24B1" data-en="24B1, West Tower, Keji Jingcheng, No. 668 Beijing East Road, Huangpu District, Shanghai">上海市黄浦区北京东路668号科技京城西楼24B1</span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-phone text-primary mt-1 mr-3"></i>
-              <span class="text-white/70">400-123-4567</span>
+              <span class="text-white/70" data-zh="15618436168  186021196169" data-en="15618436168  186021196169">15618436168  186021196169</span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-envelope text-primary mt-1 mr-3"></i>
-              <span class="text-white/70">contact@zohoservice.com</span>
+              <span class="text-white/70" data-zh="jing.liu_wh@zohomail.cn   shelby.peng@zohomail.cn" data-en="jing.liu_wh@zohomail.cn   shelby.peng@zohomail.cn">jing.liu_wh@zohomail.cn   shelby.peng@zohomail.cn</span>
             </li>
             <li class="flex items-start">
               <i class="fa fa-clock-o text-primary mt-1 mr-3"></i>
-              <span class="text-white/70">周一至周五: 9:00 - 18:00</span>
+              <span class="text-white/70" data-zh="周一至周五: 9:00 - 18:00" data-en="Monday to Friday: 9:00 - 18:00">周一至周五: 9:00 - 18:00</span>
             </li>
           </ul>
         </div>
@@ -834,13 +848,11 @@
       
       <div class="border-t border-white/10 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-white/70 text-sm mb-4 md:mb-0">
-            &copy; 2025 Zoho服务专家. 保留所有权利.
-          </p>
+          <p class="text-white/70 text-sm mb-4 md:mb-0" data-zh="&copy; 2025 上海创建者信息技术有限公司 保留所有权利." data-en="&copy; 2025 Shanghai Creator Information Technology Co., Ltd. All rights reserved."></p>
           <div class="flex space-x-6">
-            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors">隐私政策</a>
-            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors">服务条款</a>
-            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors">Cookie政策</a>
+            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors" data-zh="隐私政策" data-en="Privacy Policy"></a>
+            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors" data-zh="服务条款" data-en="Terms of Service"></a>
+            <a href="#" class="text-white/70 hover:text-primary text-sm transition-colors" data-zh="Cookie政策" data-en="Cookie Policy"></a>
           </div>
         </div>
       </div>
@@ -848,7 +860,7 @@
   </footer>
 
   <!-- 返回顶部按钮 -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+  <button id="back-to-top" class="fixed bottom-6 left-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
     <i class="fa fa-arrow-up"></i>
   </button>
 
@@ -923,12 +935,16 @@
 
     // 表单提交
     const contactForm = document.getElementById('contact-form');
-    
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      // 这里可以添加表单验证和提交逻辑
-      alert('感谢您的咨询，我们将尽快与您联系！');
+      // 获取当前语言
+      const currentLang = document.documentElement.lang || 'zh';
+      // 根据语言显示不同提示
+      const messages = {
+    zh: '感谢您的咨询，我们将尽快与您联系！',
+    en: 'Thank you for your inquiry, we will contact you soon!'
+  };
+      alert(messages[currentLang]);
       contactForm.reset();
     });
 
@@ -953,6 +969,54 @@
       }
     });
   </script>
-  <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqb0f2b8a972eecf719248022ecaaa03b3" defer></script>
 </body>
-</html>    
+</html>
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+<script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqb0f2b8a972eecf719248022ecaaa03b3" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 语言切换功能
+  const langElements = document.querySelectorAll('[data-zh]');
+  const zhButton = document.getElementById('lang-zh');
+  const enButton = document.getElementById('lang-en');
+  
+  // 设置语言
+  function setLanguage(lang) {
+  langElements.forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${lang}`);
+  });
+  // 新增对动态生成元素的处理
+  document.querySelectorAll('.dynamic-content').forEach(el => {
+    el.innerHTML = el.getAttribute(`data-${lang}`);
+  });
+  // 添加占位符翻译
+  document.querySelectorAll('[data-zh-placeholder]').forEach(el => {
+    el.placeholder = el.getAttribute(`${lang === 'zh' ? 'data-zh-placeholder' : 'data-en-placeholder'}`);
+  });
+  document.documentElement.lang = lang;
+  localStorage.setItem('preferredLang', lang);
+    
+  // 更新按钮样式
+  if (lang === 'zh') {
+    zhButton.classList.add('bg-primary', 'text-white');
+    zhButton.classList.remove('bg-gray-200', 'text-gray-700');
+    enButton.classList.add('bg-gray-200', 'text-gray-700');
+    enButton.classList.remove('bg-primary', 'text-white');
+  } else {
+    enButton.classList.add('bg-primary', 'text-white');
+    enButton.classList.remove('bg-gray-200', 'text-gray-700');
+    zhButton.classList.add('bg-gray-200', 'text-gray-700');
+    zhButton.classList.remove('bg-primary', 'text-white');
+  }
+}
+  
+  // 初始化语言
+  const savedLang = localStorage.getItem('preferredLang') || 'zh';
+  setLanguage(savedLang);
+  
+  // 添加按钮事件
+  zhButton.addEventListener('click', () => setLanguage('zh'));
+  enButton.addEventListener('click', () => setLanguage('en'));
+});
+</script>
